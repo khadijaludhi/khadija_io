@@ -34,10 +34,13 @@ const AboutMe = () => {
     <div id="about" ref={sectionRef}>
       <div className="about-container">
         <div className="section-header">
+          <div className="section-right">
+            <span className="section-number">01</span>
+          </div>
           {isVisible && (
             <Typewriter
               options={{
-                delay: 25,  // Speed in milliseconds
+                delay: 100,  // Speed in milliseconds
               }}
               onInit={(typewriter) => {
                 typewriter
@@ -49,8 +52,9 @@ const AboutMe = () => {
         </div>
         <Fade bottom when={isVisible} delay={500} distance="75px" duration={1500}>
           <div className="about-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>I am an incoming Mathematics student at the University of Leeds with a keen interest in the ever-evolving worlds of software development and fintech.</p>
+            <p>Although I have much to learn, I view each challenge as an opportunity for growth and advancement. I am eager to build my skill set and gain deeper insights in the years to come.</p>
+            <p>Outside of my studies, I love to play video games and listen to true crime podcasts. I am fascinated by space and enjoy hiking.</p>
           </div>
         </Fade>
       </div>
