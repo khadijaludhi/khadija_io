@@ -18,9 +18,11 @@ const AboutMe = () => {
         threshold: 0.25,
       }
     );
+
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
+
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
@@ -34,6 +36,9 @@ const AboutMe = () => {
         <div className="section-header">
           {isVisible && (
             <Typewriter
+              options={{
+                delay: 25,  // Speed in milliseconds
+              }}
               onInit={(typewriter) => {
                 typewriter
                   .typeString('About Me')
@@ -42,7 +47,7 @@ const AboutMe = () => {
             />
           )}
         </div>
-        <Fade bottom when={isVisible}>
+        <Fade bottom when={isVisible} delay={500} distance="75px" duration={1500}>
           <div className="about-content">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
