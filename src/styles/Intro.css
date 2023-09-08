@@ -1,21 +1,41 @@
+html {
+    scroll-behavior: smooth;
+  }
+
 #intro {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    padding-left: 15%;
     justify-content: center;
     min-height: 100vh;
- }
- 
- .intro-container {
-    padding: 15px;
-    padding-top: 5px;
-    font-size: 70px;
+    position: relative;
+}
+
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 65px;
     text-align: left;
-    padding-right: 40%;
- }
- 
- .intro-name {
-    color: #fd4692;
     font-weight: bold;
- }
- 
+    min-height: 100vh;  /* Occupy full vertical space */
+}
+
+.lottie-container {
+    width: 100%;
+    max-width: 300px;
+}
+
+.dialogue {
+    min-width: 300px;
+    justify-content: center;  /* Align the children to the center vertically */
+}
+
+.intro-name {
+    color: #ff51ae;
+}
+
+.intro-greeting{
+    color: rgb(230, 217, 255);
+}

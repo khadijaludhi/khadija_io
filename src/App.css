@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "NTR";
+  font-weight: 200;
+  font-display: fallback;
+  src: url("/fonts/NTR-Regular.ttf") format("truetype");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /* ensure padding doesn't add to width */
+  overflow-x: hidden;
+  padding: 40px 24px;
+}
+
+#content {
+  width: 100%;
+  /* Use percentage instead of vw */
+  box-sizing: border-box;
+  /* ensure padding doesn't add to width */
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
