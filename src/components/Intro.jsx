@@ -1,6 +1,7 @@
 import "../styles/Intro.css";
 import Lottie from 'lottie-react';
 import Robot from "../assets/robotsayshi.json";
+import Typewriter from 'typewriter-effect';
 
 const Intro = () => {
     return (
@@ -17,9 +18,18 @@ const Intro = () => {
                     />
                 </div>
                 <div className="dialogue">
-                    <span className="intro-greeting">hey there,</span>
-                    <br />
-                    <span className="intro-name">Khadija</span> <span className="intro-greeting">here :)</span>
+                    <Typewriter
+                        options={{
+                            delay: 85,  // Setting the speed to 90 milliseconds per character
+                        }}
+                        onInit={(typewriter) => {
+                            typewriter
+                            .typeString('<span class="intro-greeting">hey there,</span>')
+                            .typeString('<br />')  // This adds a new line
+                            .typeString('<span class="intro-name">Khadija</span> <span class="intro-greeting">here :)</span>')
+                            .start();
+                        }}
+                    />
                 </div>
             </div>
         </div>
