@@ -1,6 +1,7 @@
 import './App.css'
 import Intro from "./components/Intro";
 import StarsCanvas from "./components/canvas/Stars";
+import About from "./components/About";
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
             
             <StarsCanvas></StarsCanvas>
           </div>
+          <About></About>
         </div>
       </div>
  )
