@@ -113,4 +113,8 @@ html {
         font-size: 30px;
     }
 
+    .section-right{
+        font-size: 0px;
+    }
+
 }
