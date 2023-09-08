@@ -39,3 +39,17 @@ html {
 .intro-greeting{
     color: rgb(230, 217, 255);
 }
+
+
+/* Small devices */
+@media only screen and (max-width: 600px) {
+  
+    .intro-container {
+        font-size: 45px;
+    }
+
+    .lottie-container {
+        width: 100%;
+        max-width: 250px;
+    }
+}
