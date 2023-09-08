@@ -1,0 +1,21 @@
+#intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+ }
+ 
+ .intro-container {
+    padding: 15px;
+    padding-top: 5px;
+    font-size: 70px;
+    text-align: left;
+    padding-right: 40%;
+ }
+ 
+ .intro-name {
+    color: #fd4692;
+    font-weight: bold;
+ }
+ 
