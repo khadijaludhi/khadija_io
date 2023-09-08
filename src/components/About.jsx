@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import '../styles/About.css';
 import Typewriter from 'typewriter-effect';
+import Fade from 'react-reveal/Fade';
 
 const AboutMe = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,7 +15,7 @@ const AboutMe = () => {
       {
         root: null,
         rootMargin: '0px',
-        threshold: 0.3,  // Adjust this value 
+        threshold: 0.25,
       }
     );
     if (sectionRef.current) {
@@ -41,10 +42,12 @@ const AboutMe = () => {
             />
           )}
         </div>
-        <div className="about-content">
-          <p>Lorem ipsum...</p>
-          <p>Lorem ipsum...</p>
-        </div>
+        <Fade bottom when={isVisible}>
+          <div className="about-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </Fade>
       </div>
     </div>
   );
