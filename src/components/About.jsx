@@ -14,7 +14,7 @@ const AboutMe = () => {
       {
         root: null,
         rootMargin: '0px',
-        threshold: 0.1,
+        threshold: 0.5,  // Adjust this value 
       }
     );
     if (sectionRef.current) {
