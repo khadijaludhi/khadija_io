@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Fade';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [hasBeenVisible, setHasBeenVisible] = useState(false);  // <- Add this state
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);  // <- Added this state
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -58,11 +58,16 @@ const Projects = () => {
             <div className="section-right">
               <Typewriter
                 options={{
-                  delay: 350,  // Speed in milliseconds
+                  delay: 370,  // Speed in milliseconds
+                  autoStart: false,
                 }}
                 onInit={(typewriter) => {
                   typewriter
                     .typeString('<span class="hot-pink">02</span>')
+                    .callFunction((state, stop) => {
+                      state.elements.cursor.style.animation = 'none';
+                      state.elements.cursor.style.opacity = 0;
+                    })
                     .start();
                 }}
               />
