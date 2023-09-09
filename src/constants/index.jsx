@@ -36,7 +36,29 @@ import {
       image: sketchpad,
       source_code_link: "https://github.com/khadijaludhi/sketchpad",
     },
-    
+
+    {
+      name: "Calculator",
+      description:
+        "A simple calculator built using React.js.",
+      tags: [
+        {
+          name: "html",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "css",
+          color: "green-text-gradient",
+        },
+        {
+          name: "javascript",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: calculator,
+      source_code_link: "https://github.com/khadijaludhi/calculator",
+    },    
+
     {
       name: "Analogue Clock",
       description:
@@ -58,28 +80,7 @@ import {
       image: clock,
       source_code_link: "https://github.com/khadijaludhi/clock",
     },
-    
-    {
-      name: "Calculator",
-      description:
-        "A simple calculator built using React.js.",
-      tags: [
-        {
-          name: "html",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "css",
-          color: "green-text-gradient",
-        },
-        {
-          name: "javascript",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: calculator,
-      source_code_link: "https://github.com/khadijaludhi/calculator",
-    },
+  
   ];
   
   export { projects };
