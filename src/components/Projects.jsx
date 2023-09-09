@@ -48,7 +48,7 @@ const Projects = () => {
                 }}
                 onInit={(typewriter) => {
                   typewriter
-                    .typeString('<span class="purple">projects</span>')
+                    .typeString('<span class="purple">latest projects</span>')
                     .start();
                 }}
               />

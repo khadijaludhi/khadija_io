@@ -1,13 +1,12 @@
 html {
     scroll-behavior: smooth;
-  }
+}
 
 #project {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding-left: 15%;
-    padding-right: 10%;
     justify-content: center;
     min-height: 100vh;
     position: relative;
@@ -17,35 +16,26 @@ html {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    font-size: 65px;
+    font-size: 18px;
     text-align: left;
+    font-weight: normal;
+    min-height: 100vh;
+    max-width: 850px;
+}
+
+.section-header {
+    font-size: 40px;
     font-weight: bold;
-    min-height: 100vh;  /* Occupy full vertical space */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-.dialogue {
-    min-width: 300px;
-    justify-content: center;  /* Align the children to the center vertically */
+.project-content p {
+    margin-bottom: 16px;
+    font-size: 18px;
+    color: rgb(236, 226, 255);
 }
 
-.intro-name {
-    color: #ff51ae;
-}
-
-.intro-greeting{
-    color: rgb(230, 217, 255);
-}
-
-
-/* Small devices */
-@media only screen and (max-width: 600px) {
-  
-    .project-container {
-        font-size: 40px;
-    }
-
-    .dialogue{
-        min-width: 100%;
-    }
-
-}
