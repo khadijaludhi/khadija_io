@@ -68,10 +68,11 @@ html {
         max-width: 200px;
     }
 
-         .about-content {
-             min-width: 300px;
-             /* Adjust based on your design preference */
-         }
+    .about-content {
+        min-width: 300px;
+        /* Adjust based on your design preference */
+    }
+    
 }
 
 /* Small devices */
