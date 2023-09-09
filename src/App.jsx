@@ -3,6 +3,7 @@ import Intro from "./components/Intro";
 import StarsCanvas from "./components/canvas/Stars";
 import About from "./components/About";
 import Projects from "./components/Projects";
+import SidebarNav from './components/SidebarNav';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <About></About>
           <Projects></Projects>
         </div>
+        <SidebarNav></SidebarNav>
       </div>
     </Router>
  )

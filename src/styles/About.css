@@ -8,6 +8,7 @@ html {
     align-items: flex-start;
     padding-left: 15%;
     padding-right: 10%;
+    padding-bottom: 10%;
     justify-content: center;
     min-height: 70vh;
     position: relative;

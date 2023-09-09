@@ -1,0 +1,46 @@
+@import "rsuite/dist/rsuite.css";
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    right: 0;
+    padding-right: 5%;
+    bottom: 10%;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.3em;
+}
+
+.rs-sidenav-subtle {
+    background-color: transparent !important;
+}
+
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    font-family: "NTR", sans-serif;
+    letter-spacing: 0em;
+    line-height: 1.6em;
+    font-size: 16px;
+    padding: 0.2em;
+    font-weight: bold;
+}
+
+.sidebar-logos a {
+    /* adjusting gaps between logos */
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+/* Mobile view adjustments */
+@media only screen and (max-width: 1000px) {
+    .sidebar-nav {
+        display: none;
+        /* Hide the entire sidebar navigation on mobile */
+    }
+
+
+}
