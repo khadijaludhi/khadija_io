@@ -1,0 +1,51 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+#project {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 15%;
+    padding-right: 10%;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 65px;
+    text-align: left;
+    font-weight: bold;
+    min-height: 100vh;  /* Occupy full vertical space */
+}
+
+.dialogue {
+    min-width: 300px;
+    justify-content: center;  /* Align the children to the center vertically */
+}
+
+.intro-name {
+    color: #ff51ae;
+}
+
+.intro-greeting{
+    color: rgb(230, 217, 255);
+}
+
+
+/* Small devices */
+@media only screen and (max-width: 600px) {
+  
+    .project-container {
+        font-size: 40px;
+    }
+
+    .dialogue{
+        min-width: 100%;
+    }
+
+}
