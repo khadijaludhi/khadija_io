@@ -11,7 +11,7 @@ const SidebarNav = () => {
   const links = [
     { name: "home", to: "intro" },
     { name: "about me", to: "about" },
-    { name: "latest projects", to: "project" },
+    { name: "latest projects", to: "projects" },
     // { name: "toolkit", to: "toolkit" },
   ];
 

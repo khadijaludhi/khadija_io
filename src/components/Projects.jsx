@@ -103,7 +103,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <div id="project" ref={sectionRef}>
+    <div id="projects" ref={sectionRef}>
       <div className="project-container">
         <div className="section-header">
           {(isVisible || hasBeenVisible) && (  // <- Change this condition
