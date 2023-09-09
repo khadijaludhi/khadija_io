@@ -7,7 +7,6 @@ html {
     flex-direction: column;
     align-items: flex-start;
     padding-left: 15%;
-    padding-right: 10%;
     justify-content: center;
     min-height: 100vh;
     position: relative;
@@ -40,40 +39,52 @@ html {
     color: rgb(236, 226, 255);
 }
 
-/* Medium devices */
-@media only screen and (max-width: 1188px) {
+/* #projects {
+    padding-left: 15%;
+    padding-right: 25%;
+    min-height: 60vh;
+    padding-top: 5%;
+} */
 
-    .about-content {
-        min-width: 300px;
-        /* Adjust based on your design preference */
-    }
-
+.cards {
+    max-width: 360px;
+    /* Setting a max width to the default style ensures it never exceeds this width on larger screens */
+    width: 100%;
+    margin: 10px;
+    
 }
 
-/* Small devices */
 @media only screen and (max-width: 600px) {
-    #project {
+    #projects {
         padding-left: unset;
         padding-right: unset;
-        padding-top: unset;
         height: unset;
+        padding-top: 15%;
     }
 
-    .project-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .react-reveal {
-        margin: 0px;
-    }
-
-    .section-header {
-        font-size: 30px;
-    }
-
-    .section-right{
-        font-size: 0px;
+    .cards {
+        max-width: 90%;
     }
 
 }
+
+@media only screen and (max-width: 400px) {
+    .cards {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

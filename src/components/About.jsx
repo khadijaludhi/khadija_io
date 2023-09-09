@@ -79,7 +79,7 @@ const AboutMe = () => {
             </div>
           )}
         </div>
-        <Fade bottom when={isVisible || hasBeenVisible} delay={500} distance="75px" duration={1500}>  {/* <- Changed this condition */}
+        <Fade bottom when={isVisible || hasBeenVisible} delay={500} distance="75px" duration={3000}>  {/* <- Changed this condition */}
           <div className="about-content">
             <div>
                 <p>I am an incoming <span className="highlighted-text">Mathematics</span> student at the <span className="highlighted-text">University of Leeds</span> with a keen interest in the ever-evolving worlds of software development and fintech.</p>

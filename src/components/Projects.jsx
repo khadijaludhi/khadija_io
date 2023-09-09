@@ -1,7 +1,73 @@
-import React, { useEffect, useState, useRef } from 'react';
-import '../styles/Projects.css';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import "../styles/Projects.css";
+import Fade from "react-reveal/Fade";
+import { Tilt } from 'react-tilt';
+import { projects } from '../constants';
 import Typewriter from 'typewriter-effect';
-import Fade from 'react-reveal/Fade';
+
+
+const ProjectCard = ({ name, description, tags, image, source_code_link }) => {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  const handleWindowSizeChange = () => {
+    setWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSizeChange);
+    return () => {
+      window.removeEventListener('resize', handleWindowSizeChange);
+    };
+  }, []);
+
+  const isMobile = width <= 768;
+
+  if (isMobile) {
+    return (
+      <Link to={source_code_link}>
+        <div className='self-stretch bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-full text-23px cards'>
+          {/* Content */}
+          <div className='relative w-full h-[230px]'> {/*Image at top of card*/}
+            <img src={image} alt={name} className='w-full h-full object-cover rounded-2xl' />
+          </div>
+          <div className="mt-2">  {/*Description after image */}
+            <h3 className="text-white font-bold text-23px">{name}</h3>  
+            <p className="mt-2 text-secondary text-16px">{description}</p>
+          </div>
+          <div className="mt-7 flex gap-7"> {/*Tags at bottom of card */}
+            {tags.map(tag => <p key={tag.name} className={`text-16px mt--4 ${tag.color}`}>#{tag.name}</p>)}
+          </div>
+        </div>
+      </Link>
+    );
+  }
+
+  return (
+    <Link to={source_code_link}>
+      <Tilt
+        options={{  
+          max: 45,
+          scale: 1,
+          speed: 450, 
+        }}
+        className='self-stretch bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-full text-23px cards'
+      >
+        {/* Content */}
+        <div className='relative w-full h-[230px]'>
+          <img src={image} alt={name} className='w-full h-full object-cover rounded-2xl' />
+        </div>
+        <div className="mt-2">
+          <h3 className="text-white font-bold text-23px">{name}</h3>  
+          <p className="mt-2 text-secondary text-16px">{description}</p>
+        </div>
+        <div className="mt-7 flex gap-7">
+          {tags.map(tag => <p key={tag.name} className={`text-16px mt--4 ${tag.color}`}>#{tag.name}</p>)}
+        </div>
+      </Tilt>
+    </Link>
+  );
+};
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -74,10 +140,11 @@ const Projects = () => {
             </div>
           )}
         </div>
-        <Fade bottom when={isVisible || hasBeenVisible} delay={500} distance="75px" duration={1500}>  {/* <- Change this condition */}
-          <div className="project-content">
-            <p>Project 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p>Project 2: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        <Fade bottom when={isVisible || hasBeenVisible} delay={500} distance="75px" duration={3000}>  {/* <- Change this condition */}
+          <div className="flex justify-center flex-wrap items-stretch">
+            {projects.map((project, index) => (
+              <ProjectCard key={`project-${index}`} {...project} />
+              ))}
           </div>
         </Fade>
       </div>
