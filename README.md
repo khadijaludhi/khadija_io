@@ -1,7 +1,7 @@
 # Khadija's Portfolio
 
 ## Introduction
-Hi and welcome to my portfolio! This project has been a transformative experience, challenging me in various ways while offering abundant opportunities for learning and growth. It encapsulates my journey as a developer, showcasing my skills, projects, and accumulated knowledge. My expertise mainly focuses on front-end development, particularly in React, Vite, and Tailwind CSS.
+Hi and welcome to my portfolio! This project has been a transformative experience, challenging me in various ways while offering abundant opportunities for learning and growth. It encapsulates my journey as a developer, showcasing my skills, projects, and accumulated knowledge. My current focus is on honing my skills in front-end development, specifically in the areas of React, Vite, and Tailwind CSS.
 
 ## Technologies Used
 - React.js
@@ -19,7 +19,7 @@ Hi and welcome to my portfolio! This project has been a transformative experienc
 - **Optimized Builds:** Understood how Vite utilizes Rollup for small production bundles and efficient tree shaking.
 
 ### React:
-- **Component-Based Architecture:** Mastered the modular nature of React by building reusable components.
+- **Component-Based Architecture:** Deepened my understanding of the modular nature of React by building reusable components.
 - **Hooks:** Deepened understanding of React hooks for cleaner and more intuitive code.
 - **Context and Global State:** Used the Context API for structured application state and avoided prop drilling.
 
