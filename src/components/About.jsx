@@ -84,7 +84,7 @@ const AboutMe = () => {
             <div>
                 <p>I am an incoming <span className="highlighted-text">Mathematics</span> student at the <span className="highlighted-text">University of Leeds</span> with a keen interest in the ever-evolving worlds of software development and fintech.</p>
                 <p>Although I have much to learn, I view each challenge as an opportunity for <span className="highlighted-text">growth and advancement</span>. I am eager to build my skill set and gain deeper insights in the years to come.</p>
-                <p>Outside of my studies, I love to play video games and listen to true crime podcasts. I am fascinated by space and enjoy hiking.</p>
+                <p>Outside of my studies, I love to play video games and listen to true crime podcasts. I am also fascinated by space and enjoy hiking.</p>
             </div>
            
            
