@@ -5,12 +5,18 @@ import Fade from 'react-reveal/Fade';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);  // <- Add this state
   const sectionRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
+
+        // If the element becomes visible, set hasBeenVisible to true
+        if (entry.isIntersecting) {
+          setHasBeenVisible(true);
+        }
       },
       {
         root: null,
@@ -31,24 +37,40 @@ const Projects = () => {
   }, []);
 
   return (
-    <div id="projects" ref={sectionRef}>
-      <div className="projects-container">
+    <div id="project" ref={sectionRef}>
+      <div className="project-container">
         <div className="section-header">
-          {isVisible && (
-            <Typewriter
-              options={{
-                delay: 50,  // Speed in milliseconds
-              }}
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString('Projects')
-                  .start();
-              }}
-            />
+          {(isVisible || hasBeenVisible) && (  // <- Change this condition
+            <div className="section-left purple">
+              <Typewriter
+                options={{
+                  delay: 100,  // Speed in milliseconds
+                }}
+                onInit={(typewriter) => {
+                  typewriter
+                    .typeString('<span class="purple">projects</span>')
+                    .start();
+                }}
+              />
+            </div>
+          )}
+          {(isVisible || hasBeenVisible) && (  // <- Change this condition
+            <div className="section-right">
+              <Typewriter
+                options={{
+                  delay: 350,  // Speed in milliseconds
+                }}
+                onInit={(typewriter) => {
+                  typewriter
+                    .typeString('<span class="hot-pink">02</span>')
+                    .start();
+                }}
+              />
+            </div>
           )}
         </div>
-        <Fade bottom when={isVisible} delay={500} distance="75px" duration={1200}>
-          <div className="projects-content">
+        <Fade bottom when={isVisible || hasBeenVisible} delay={500} distance="75px" duration={1500}>  {/* <- Change this condition */}
+          <div className="project-content">
             <p>Project 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <p>Project 2: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
           </div>
