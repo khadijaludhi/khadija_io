@@ -10,7 +10,7 @@ html {
     padding-right: 10%;
     padding-bottom: 15%;
     justify-content: center;
-    min-height: 70vh;
+    min-height: 40vh;
     position: relative;
 }
 
@@ -21,7 +21,7 @@ html {
     font-size: 18px;
     text-align: left;
     font-weight: normal;
-    min-height: 70vh;
+    min-height: 40vh;
     max-width: 850px;
 }
 
