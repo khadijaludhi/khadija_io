@@ -17,6 +17,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    font-family: 'ElegantTypewriterBold', sans-serif;
     font-size: 18px;
     text-align: center;
     font-weight: normal;
@@ -45,7 +46,6 @@ html {
     /* Setting a max width to the default style ensures it never exceeds this width on larger screens */
     width: 100%;
     margin: 10px;
-    
 }
 
 @media only screen and (max-width: 600px) {
@@ -76,16 +76,23 @@ html {
 
 }
 
+@font-face {
+    font-family: 'ElegantTypewriterRegular';
+    src: url('../assets/fonts/ELEGANT-TYPEWRITER-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'ElegantTypewriterBold';
+    src: url('../assets/fonts/ELEGANT-TYPEWRITER-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+@font-face {
+    font-family: 'ElegantTypewriterLight';
+    src: url('../assets/fonts/ELEGANT-TYPEWRITER-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
