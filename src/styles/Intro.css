@@ -1,6 +1,13 @@
 html {
     scroll-behavior: smooth;
-  }
+}
+
+@font-face {
+    font-family: 'ElegantTypewriterBold';
+    src: url('../assets/fonts/ELEGANT-TYPEWRITER-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
 
 #intro {
     display: flex;
@@ -17,7 +24,8 @@ html {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    font-size: 65px;
+    font-family: 'ElegantTypewriterBold', sans-serif;
+    font-size: 75px;
     text-align: left;
     font-weight: bold;
     min-height: 100vh;  /* Occupy full vertical space */
@@ -29,18 +37,20 @@ html {
 }
 
 .dialogue {
+    font-family: 'ElegantTypewriterBold', sans-serif;
     min-width: 300px;
     justify-content: center;  /* Align the children to the center vertically */
 }
 
 .intro-name {
+    font-family: 'ElegantTypewriterBold', sans-serif;
     color: #ff51ae;
 }
 
-.intro-greeting{
+.intro-greeting {
+    font-family: 'ElegantTypewriterBold', sans-serif;
     color: rgb(230, 217, 255);
 }
-
 
 /* Small devices */
 @media only screen and (max-width: 600px) {
@@ -54,8 +64,7 @@ html {
         max-width: 250px;
     }
     
-    .dialogue{
+    .dialogue {
         min-width: 100%;
     }
-
 }
