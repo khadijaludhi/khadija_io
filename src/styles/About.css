@@ -18,6 +18,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    font-family: 'ElegantTypewriterRegular', sans-serif;
     font-size: 18px;
     text-align: left;
     font-weight: normal;
@@ -26,6 +27,7 @@ html {
 }
 
 .section-header {
+    font-family: 'ElegantTypewriterBold', sans-serif;
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -36,10 +38,10 @@ html {
 }
 
 .about-content p {
+    font-family: 'ElegantTypewriterRegular', sans-serif;
     margin-bottom: 16px;
     font-size: 18px;
     color: rgb(236, 226, 255);
-
 }
 
 .about-content {
@@ -61,7 +63,7 @@ html {
 
 .highlighted-text {
     color: #ff51ae;
-  }  
+}  
 
 /* Medium devices */
 @media only screen and (max-width: 1188px) {
@@ -71,9 +73,7 @@ html {
 
     .about-content {
         min-width: 300px;
-        /* Adjust based on your design preference */
     }
-    
 }
 
 /* Small devices */
@@ -115,8 +115,30 @@ html {
         font-size: 30px;
     }
 
-    .section-right{
+    .section-right {
         font-size: 0px;
     }
-
 }
+
+@font-face {
+    font-family: 'ElegantTypewriterRegular';
+    src: url('../assets/fonts/ELEGANT-TYPEWRITER-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ElegantTypewriterBold';
+    src: url('../assets/fonts/ELEGANT-TYPEWRITER-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ElegantTypewriterLight';
+    src: url('../assets/fonts/ELEGANT-TYPEWRITER-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+

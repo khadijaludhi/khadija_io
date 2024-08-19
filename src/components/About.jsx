@@ -86,6 +86,8 @@ const AboutMe = () => {
                 <p>Although I have much to learn, I view each challenge as an opportunity for <span className="highlighted-text">growth and advancement</span>. I am eager to build my skill set and gain deeper insights in the years to come.</p>
                 <p>Outside of my studies, I love to play Baldur's Gate 3 and listen to true crime podcasts. I am also fascinated by space and enjoy hiking.</p>
             </div>
+            
+            
             <div className="about-image">
               <img src={headshot} alt="A picture of me" />
             </div>
