@@ -2,6 +2,8 @@ import {
     calculator,
     sketchpad,
     clock,
+    hangman,
+    
   
   } from "../assets";
   
@@ -78,6 +80,20 @@ import {
       ],
       image: clock,
       source_code_link: "https://github.com/khadijaludhi/clock",
+    },
+
+    {
+      name: "Hangman",
+      description:
+        "A simple Hangman game built with Python",
+        tags: [
+        {
+          name: "Python",
+          color: "blue-text-gradient",
+        },
+      ],
+      image: hangman,
+      source_code_link: "https://github.com/khadijaludhi/hangman",
     },
   
   ];
