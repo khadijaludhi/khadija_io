@@ -11,13 +11,12 @@ import {
       title: "About",
     },
   ];
-     
-  // ! keep projects section
+  
+  // ! projects section
   const projects = [
     {
       name: "Sketchpad",
       description:
-        
         "An etch-e-sketch game that allows users to draw their own fun designs.",
       tags: [
         {
