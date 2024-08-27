@@ -4,6 +4,7 @@ import StarsCanvas from "./components/canvas/Stars";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
+import JobList from "./components/JobList";
 import SidebarNav from './components/SidebarNav';
 import { BrowserRouter as Router } from 'react-router-dom';
 

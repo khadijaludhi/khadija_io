@@ -1,13 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
-
-
 import '../styles/Experience.css';
+import JobList from "./JobList";
 import Typewriter from 'typewriter-effect';
 import Fade from 'react-reveal/Fade';
 
 const Experience = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [hasBeenVisible, setHasBeenVisible] = useState(false);  // <- Added this state
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -15,7 +14,6 @@ const Experience = () => {
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
 
-        // If the element becomes visible, set hasBeenVisible to true
         if (entry.isIntersecting) {
           setHasBeenVisible(true);
         }
@@ -38,16 +36,15 @@ const Experience = () => {
     };
   }, []);
 
-
   return (
     <div id="experience" ref={sectionRef}>
       <div className="experience-container">
         <div className="section-header">
-          {(isVisible || hasBeenVisible) && (  // <- Changed this condition
+          {(isVisible || hasBeenVisible) && (
             <div className="section-left purple">
               <Typewriter
                 options={{
-                  delay: 100,  // Speed in milliseconds
+                  delay: 100,
                 }}
                 onInit={(typewriter) => {
                   typewriter
@@ -57,7 +54,7 @@ const Experience = () => {
               />
             </div>
           )}
-          {(isVisible || hasBeenVisible) && (  // <- Changed this condition
+          {(isVisible || hasBeenVisible) && (
             <div className="section-right">
               <Typewriter
                 options={{
@@ -77,18 +74,12 @@ const Experience = () => {
             </div>
           )}
         </div>
-        <Fade bottom when={isVisible || hasBeenVisible} delay={500} distance="75px" duration={3000}>  {/* <- Changed this condition */}
+        <Fade bottom when={isVisible || hasBeenVisible} delay={500} distance="75px" duration={3000}>
           <div className="experience-content">
-            <div>
-                <p>Blank Blank <span className="highlighted-text">Blank Blank </span>Blank Blank <span className="highlighted-text">Blank Blank </span>Blank Blank.</p>
-                <p>Blank <span className="highlighted-text">Blank </span> Blank.</p>
-            </div>
-            
+            <JobList />
           </div>
-
         </Fade>
       </div>
-
     </div>
   );
 };
