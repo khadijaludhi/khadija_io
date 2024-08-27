@@ -34,12 +34,24 @@
     font-size: 19px;
     padding: 0.2em;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .sidebar-logos a {
     /* adjusting gaps between logos */
     margin-left: 2px;
     margin-right: 2px;
+}
+
+.purple {
+    color: rgb(230, 217, 255);
+}
+
+  /* Hover effect to change color to purple */
+
+.sidebar-nav a:hover {
+    color: rgb(230, 217, 255); /* Matches the purple class */
+    text-decoration: none; /* Ensures underline is still removed */
 }
 
 /* Mobile view adjustments */

@@ -12,6 +12,7 @@ const SidebarNav = () => {
     { name: "home", to: "intro" },
     { name: "about me", to: "about" },
     { name: "latest projects", to: "projects" },
+    { name: "experience", to: "experience" },
     // { name: "toolkit", to: "toolkit" },
   ];
 
