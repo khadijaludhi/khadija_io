@@ -16,7 +16,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <div style={{ padding: "16px" }}>
+        <div style={{ padding: 0 }}>
           {children}
         </div>
       )}
@@ -106,7 +106,7 @@ const JobList = () => {
       <Fade bottom when={isVisible || hasBeenVisible} delay={500} distance="75px" duration={3000}>
         <div style={{ display: "flex", flexDirection: isHorizontal ? "column" : "row", gap: "20px" }}>
           <div style={{ flexBasis: "20%" }}>
-            <ul style={{ listStyle: "none", padding: 0 }}>
+            <ul style={{ listStyle: "none", padding: 0, marginTop: 5 }}>
               {Object.keys(experienceItems).map((key, i) => (
                 <li
                   key={i}
