@@ -126,7 +126,7 @@ const JobList = () => {
                   <span style={{ fontSize: "24px", fontWeight: "bold" }}>{experienceItems[key]["jobTitle"]}</span>
                 </div>
                 <div style={{ marginBottom: "8px", color: "#ff51ae" }}>{key}</div>
-                <div style={{ marginBottom: "16px", color: "#bbb" }}>{experienceItems[key]["duration"]}</div>
+                <div style={{ marginBottom: "16px", color: "rgb(230, 217, 255)" }}>{experienceItems[key]["duration"]}</div>
                 <ul style={{ listStyle: "disc", paddingLeft: "20px" }}>
                   {experienceItems[key]["desc"].map((descItem, j) => (
                     <li key={j} style={{ marginBottom: "8px", color: "#eee" }}>{descItem}</li>
