@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import Fade from "react-reveal/Fade";
 
@@ -39,6 +39,9 @@ function a11yProps(index) {
 
 const JobList = () => {
   const [value, setValue] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   const experienceItems = {
     "Morgan Stanley": {
@@ -71,35 +74,69 @@ const JobList = () => {
     setValue(index);
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+
+        if (entry.isIntersecting) {
+          setHasBeenVisible(true);
+        }
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.25,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div style={{ display: "flex", flexDirection: isHorizontal ? "column" : "row", gap: "20px" }}>
-      <div style={{ flexBasis: "20%" }}>
-        <ul style={{ listStyle: "none", padding: 0 }}>
-          {Object.keys(experienceItems).map((key, i) => (
-            <li key={i} style={{ marginBottom: "8px", cursor: "pointer", color: value === i ? "#ff51ae" : "#fff" }} onClick={() => handleChange(i)} {...a11yProps(i)}>
-              {isHorizontal ? `0${i}.` : key}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div style={{ flexBasis: "80%" }}>
-        {Object.keys(experienceItems).map((key, i) => (
-          <TabPanel value={value} index={i} key={i}>
-            <Fade bottom delay={200}>
-              <div style={{ marginBottom: "8px" }}>
-                <span style={{ fontSize: "24px", fontWeight: "bold" }}>{experienceItems[key]["jobTitle"]}</span>
-              </div>
-              <div style={{ marginBottom: "8px", color: "#ff51ae" }}>{key}</div>
-              <div style={{ marginBottom: "16px", color: "#bbb" }}>{experienceItems[key]["duration"]}</div>
-              <ul style={{ listStyle: "disc", paddingLeft: "20px" }}>
-                {experienceItems[key]["desc"].map((descItem, j) => (
-                  <li key={j} style={{ marginBottom: "8px", color: "#eee" }}>{descItem}</li>
-                ))}
-              </ul>
-            </Fade>
-          </TabPanel>
-        ))}
-      </div>
+    <div ref={sectionRef}>
+      <Fade bottom when={isVisible || hasBeenVisible} delay={500} distance="75px" duration={3000}>
+        <div style={{ display: "flex", flexDirection: isHorizontal ? "column" : "row", gap: "20px" }}>
+          <div style={{ flexBasis: "20%" }}>
+            <ul style={{ listStyle: "none", padding: 0 }}>
+              {Object.keys(experienceItems).map((key, i) => (
+                <li
+                  key={i}
+                  style={{ marginBottom: "8px", cursor: "pointer", color: value === i ? "#ff51ae" : "#fff" }}
+                  onClick={() => handleChange(i)}
+                  {...a11yProps(i)}
+                >
+                  {isHorizontal ? `0${i}.` : key}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div style={{ flexBasis: "80%" }}>
+            {Object.keys(experienceItems).map((key, i) => (
+              <TabPanel value={value} index={i} key={i}>
+                <div style={{ marginBottom: "8px" }}>
+                  <span style={{ fontSize: "24px", fontWeight: "bold" }}>{experienceItems[key]["jobTitle"]}</span>
+                </div>
+                <div style={{ marginBottom: "8px", color: "#ff51ae" }}>{key}</div>
+                <div style={{ marginBottom: "16px", color: "#bbb" }}>{experienceItems[key]["duration"]}</div>
+                <ul style={{ listStyle: "disc", paddingLeft: "20px" }}>
+                  {experienceItems[key]["desc"].map((descItem, j) => (
+                    <li key={j} style={{ marginBottom: "8px", color: "#eee" }}>{descItem}</li>
+                  ))}
+                </ul>
+              </TabPanel>
+            ))}
+          </div>
+        </div>
+      </Fade>
     </div>
   );
 };

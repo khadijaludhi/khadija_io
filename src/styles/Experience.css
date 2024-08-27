@@ -20,7 +20,7 @@ html {
     align-items: flex-start;
     font-family: 'ElegantTypewriterRegular', sans-serif;
     font-size: 18px;
-    text-align: center;
+    text-align: left;
     font-weight: normal;
     min-height: 40vh;
     max-width: 850px;
@@ -35,13 +35,6 @@ html {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-}
-
-.experience-content p {
-    font-family: 'ElegantTypewriterRegular', sans-serif;
-    margin-bottom: 16px;
-    font-size: 19px;
-    color: rgb(236, 226, 255);
 }
 
 .experience-content {

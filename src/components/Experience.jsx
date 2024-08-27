@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import '../styles/Experience.css';
 import JobList from "./JobList";
 import Typewriter from 'typewriter-effect';
-import Fade from 'react-reveal/Fade';
 
 const Experience = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -38,7 +37,7 @@ const Experience = () => {
 
   return (
     <div id="experience" ref={sectionRef}>
-      <div className="experience-container">
+      <div className={`experience-container ${isVisible || hasBeenVisible ? 'fade-in' : ''}`}>
         <div className="section-header">
           {(isVisible || hasBeenVisible) && (
             <div className="section-left purple">
@@ -74,11 +73,9 @@ const Experience = () => {
             </div>
           )}
         </div>
-        <Fade bottom when={isVisible || hasBeenVisible} delay={500} distance="75px" duration={3000}>
-          <div className="experience-content">
-            <JobList />
-          </div>
-        </Fade>
+        <div className="experience-content">
+          <JobList isVisible={isVisible || hasBeenVisible} />
+        </div>
       </div>
     </div>
   );
