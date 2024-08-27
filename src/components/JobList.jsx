@@ -114,7 +114,8 @@ const JobList = () => {
                   onClick={() => handleChange(i)}
                   {...a11yProps(i)}
                 >
-                  {isHorizontal ? `0${i}.` : key}
+                  {/* Always display the experience name */}
+                  {key}
                 </li>
               ))}
             </ul>
