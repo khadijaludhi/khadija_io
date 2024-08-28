@@ -1,6 +1,6 @@
-// import EmailIcon from '@mui/icons-material/Email';
-// import LinkedInIcon from '@mui/icons-material/LinkedIn';
-// import GitHubIcon from '@mui/icons-material/GitHub';
+import EmailIcon from '@mui/icons-material/Email';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import Fade from "react-reveal/Fade";
 import { Link } from "react-scroll";
 import { Sidenav, Nav } from 'rsuite';
@@ -39,14 +39,14 @@ const SidebarNav = () => {
           </Nav>
 
           <div className="sidebar-logos" >
-            <a href="mailto:khadijaludhi@gmail.com">
-              {/* <EmailIcon style={{ fontSize: 24 }} /> */}
+            <a href="mailto:khadijaludhi01@gmail.com">
+              {<EmailIcon style={{ fontSize: 24 }} /> }
             </a>
             <a href="https://github.com/khadijaludhi">
-              {/* <GitHubIcon style={{ fontSize: 21 }} /> */}
+              {<GitHubIcon style={{ fontSize: 21 }} /> }
             </a>
             <a href="www.linkedin.com/in/khadija-ludhi">
-              {/* <LinkedInIcon style={{ fontSize: 24 }} /> */}
+              {<LinkedInIcon style={{ fontSize: 24 }} /> }
             </a>
           </div>
         </Sidenav.Body>
