@@ -46,7 +46,7 @@ const JobList = () => {
 
   const experienceItems = {
     "Morgan Stanley": {
-      jobTitle: "2025 Technology Analyst Summer Intern @ Morgan Stanley",
+      jobTitle: "2025 Tech Analyst Summer Intern @ Morgan Stanley",
       duration: "JUL 2022 - PRESENT",
       desc: [
         "Participated in Morgan Stanley’s Technology Spring Insight Week, exploring the integration of technology and finance through hands-on experiences.",
@@ -57,8 +57,8 @@ const JobList = () => {
       jobTitle: "Programme Participant @ Autovista",
       duration: "MAY 2020 - APR 2021",
       desc: [
-        "Participated in a week-long experience at Autovista, facilitated by the UpReach Xperience programme, designed to provide insights into the automotive data analytics sector.",
-        "Collaborated on a team project, “FitBot AI,” aimed at revolutionising personal training through artificial intelligence as part of a challenge to create an AI-driven initiative that automates a repetitive task. Our project won us first place for its innovative approach to enhancing workout efficiency and effectiveness.",
+        "Participated in a week-long experience at Autovista, designed to provide insights into the automotive data analytics sector.",
+        "Collaborated on 'FitBot AI,' a project that won first place for revolutionising personal training with AI to enhance workout efficiency and effectiveness.",
       ],
     },
     "Bank of America": {
