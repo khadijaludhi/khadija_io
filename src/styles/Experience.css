@@ -201,7 +201,7 @@ html {
   
   .slider {
     position: absolute;
-    right: 0px; /* Position on the right side */
+    right: -5px; /* Position on the right side */
     width: 4px;
     background-color: #ff51ae; /* Slider color */
     transition: top 0.3s ease, height 0.3s ease;
