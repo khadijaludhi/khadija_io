@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import Fade from "react-reveal/Fade";
 
-const isHorizontal = window.innerWidth < 600;
-
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -73,8 +71,10 @@ const JobList = () => {
 
   const handleChange = (index, event) => {
     setValue(index);
+    setSliderPosition(event.currentTarget);
+  };
 
-    const element = event.currentTarget;
+  const setSliderPosition = (element) => {
     setSliderStyle({
       top: element.offsetTop,
       height: element.offsetHeight,
@@ -84,10 +84,7 @@ const JobList = () => {
   const updateSliderPosition = () => {
     const selectedItem = document.querySelector(`ul li:nth-child(${value + 1})`);
     if (selectedItem) {
-      setSliderStyle({
-        top: selectedItem.offsetTop,
-        height: selectedItem.offsetHeight,
-      });
+      setSliderPosition(selectedItem);
     }
   };
 
@@ -119,9 +116,10 @@ const JobList = () => {
   }, []);
 
   useEffect(() => {
-    // Set default slider position to the first item
+    // Set initial slider position
     updateSliderPosition();
 
+    // Recalculate slider position on window resize
     window.addEventListener("resize", updateSliderPosition);
 
     return () => {
@@ -132,7 +130,7 @@ const JobList = () => {
   return (
     <div ref={sectionRef} className="joblist-container">
       <Fade bottom when={isVisible || hasBeenVisible} delay={500} distance="75px" duration={3000}>
-        <div style={{ display: "flex", flexDirection: isHorizontal ? "column" : "row", gap: "20px" }}>
+        <div style={{ display: "flex", flexDirection: "row", gap: "20px" }}>
           <div style={{ flexBasis: "20%", position: "relative" }}>
             <ul style={{ listStyle: "none", padding: 0, marginTop: 5 }}>
               {Object.keys(experienceItems).map((key, i) => (
