@@ -46,7 +46,7 @@ const JobList = () => {
 
   const experienceItems = {
     "Morgan Stanley": {
-      jobTitle: "2025 Tech Analyst Summer Intern @ Morgan Stanley",
+      jobTitle: "2025 Technology Analyst Summer Intern @ Morgan Stanley",
       duration: "JUL 2022 - PRESENT",
       desc: [
         "Participated in Morgan Stanley’s Technology Spring Insight Week, exploring the integration of technology and finance through hands-on experiences.",
@@ -81,6 +81,16 @@ const JobList = () => {
     });
   };
 
+  const updateSliderPosition = () => {
+    const selectedItem = document.querySelector(`ul li:nth-child(${value + 1})`);
+    if (selectedItem) {
+      setSliderStyle({
+        top: selectedItem.offsetTop,
+        height: selectedItem.offsetHeight,
+      });
+    }
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -110,14 +120,14 @@ const JobList = () => {
 
   useEffect(() => {
     // Set default slider position to the first item
-    const firstItem = document.querySelector('ul li');
-    if (firstItem) {
-      setSliderStyle({
-        top: firstItem.offsetTop,
-        height: firstItem.offsetHeight,
-      });
-    }
-  }, []);
+    updateSliderPosition();
+
+    window.addEventListener("resize", updateSliderPosition);
+
+    return () => {
+      window.removeEventListener("resize", updateSliderPosition);
+    };
+  }, [value]);
 
   return (
     <div ref={sectionRef} className="joblist-container">
