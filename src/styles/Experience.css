@@ -1,229 +1,229 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 #experience {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 15%;
-    padding-right: 10%;
-    padding-bottom: 10%;
-    justify-content: center;
-    min-height: 40vh;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 15%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+  justify-content: center;
+  min-height: 40vh;
+  position: relative;
 }
 
 .experience-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-family: 'ElegantTypewriterRegular', sans-serif;
-    font-size: 18px;
-    text-align: left;
-    font-weight: normal;
-    min-height: 40vh;
-    max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'ElegantTypewriterRegular', sans-serif;
+  font-size: 18px;
+  text-align: left;
+  font-weight: normal;
+  min-height: 40vh;
+  max-width: 850px;
 }
 
 .section-header {
-    font-family: 'ElegantTypewriterBold', sans-serif;
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  font-family: 'ElegantTypewriterBold', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .experience-content {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .highlighted-text {
-    color: #ff51ae;
+  color: #ff51ae;
 }  
 
 /* Medium devices */
 @media only screen and (max-width: 1188px) {
-    .experience-content {
-        min-width: 300px;
-    }
+  .experience-content {
+      min-width: 300px;
+  }
 }
 
 /* Small devices */
 @media only screen and (max-width: 600px) {
-    #experience {
-        padding-left: unset;
-        padding-right: unset;
-        padding-top: unset;
-        height: unset;
-    }
+  #experience {
+      padding-left: unset;
+      padding-right: unset;
+      padding-top: unset;
+      height: unset;
+  }
 
-    .experience-content {
-        flex-direction: column;
-        align-items: center;
-    }
+  .experience-content {
+      flex-direction: column;
+      align-items: center;
+  }
 
-    .react-reveal {
-        margin: 0px;
-    }
+  .react-reveal {
+      margin: 0px;
+  }
 
-    .university-name {
-        color: #EE4266;
-        font-weight: bold;
-        font-size: 24px;
-    }
+  .university-name {
+      color: #EE4266;
+      font-weight: bold;
+      font-size: 24px;
+  }
 
-    .section-header {
-        font-size: 30px;
-    }
+  .section-header {
+      font-size: 30px;
+  }
 
-    .section-right {
-        font-size: 0px;
-    }
+  .section-right {
+      font-size: 0px;
+  }
 }
 
 @font-face {
-    font-family: 'ElegantTypewriterRegular';
-    src: url('../assets/fonts/ELEGANT-TYPEWRITER-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'ElegantTypewriterRegular';
+  src: url('../assets/fonts/ELEGANT-TYPEWRITER-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'ElegantTypewriterBold';
-    src: url('../assets/fonts/ELEGANT-TYPEWRITER-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+  font-family: 'ElegantTypewriterBold';
+  src: url('../assets/fonts/ELEGANT-TYPEWRITER-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'ElegantTypewriterLight';
-    src: url('../assets/fonts/ELEGANT-TYPEWRITER-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
+  font-family: 'ElegantTypewriterLight';
+  src: url('../assets/fonts/ELEGANT-TYPEWRITER-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
 }
 
+
+.joblist-job-title {
+  font-family: "NTR", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--lightest-slate);
+}
+
+.joblist-job-company {
+  font-family: "NTR", sans-serif;
+  font-size: 28px;
+  color: var(--green-bright);
+  font-weight: bold;
+}
+
+.joblist-duration {
+  font-family: "NTR", sans-serif;
+  font-size: 18px;
+  color: var(--slate);
+}
+
+#vertical-tabpanel {
+  margin-top: -28px;
+  padding-left: 25px;
+}
+
+.MuiTab-wrapper {
+  font-size: 16px;
+  text-align: left;
+  align-items: flex-start !important;
+  font-family: "NTR", sans-serif;
+}
+
+.MuiButtonBase-root {
+  outline: none !important;
+  color: var(--lightest-slate) !important;
+}
+
+.PrivateTabIndicator-colorSecondary-5 {
+  background-color: var(--green-bright) !important;
+}
+.jss5 {
+  background-color: var(--green-bright) !important;
+}
+.makeStyles-tabs-2 {
+  border-right: 1px solid var(--lightest-navy) !important;
+}
+#experience .MuiTab-root {
+  padding: 6px 20px;
+}
+.MuiButtonBase-root:focus {
+  color: var(--green-bright) !important;
+}
+
+ul {
+  list-style: none;
+  margin-left: -40px;
+}
+
+.job-description li::before {
+  content: "▹    ";
+  color: var(--green-bright);
+  position: absolute;
+  left: 0;
+}
+
+.job-description li {
+  position: relative;
+  padding-left: 30px;
+  padding-bottom: 16px;
+  font-size: 18px;
+  color: var(--slate);
+}
+
+.job-description {
+  padding-top: 24px;
+  max-width: 650px;
+  font-family: "NTR", sans-serif;
+  font-size: 20px;
+}
+
+.job-description a,
+.job-description b {
+  font-size: 19px;
+  font-weight: bold;
+}
+
+/* Adding slider for my experience */
+.joblist-container {
+  position: relative;
+}
+
+.slider {
+  position: absolute;
+  right: -5px; /* Position on the right side */
+  width: 4px;
+  background-color: #ff51ae; /* Slider color */
+  transition: top 0.3s ease, height 0.3s ease;
+}
+
+@media only screen and (max-width: 600px) {
+  .jss1 {
+    height: unset !important;
+    flex-direction: column !important;
+  }
+
+  .makeStyles-root-1 {
+    height: unset !important;
+    width: unset;
+    flex-direction: column;
+  }
 
   .joblist-job-title {
-    font-family: "NTR", sans-serif;
-    font-size: 28px;
-    font-weight: bold;
-    color: var(--lightest-slate);
-  }
-  
-  .joblist-job-company {
-    font-family: "NTR", sans-serif;
-    font-size: 28px;
-    color: var(--green-bright);
-    font-weight: bold;
-  }
-  
-  .joblist-duration {
-    font-family: "NTR", sans-serif;
-    font-size: 18px;
-    color: var(--slate);
-  }
-  
-  #vertical-tabpanel {
-    margin-top: -28px;
-    padding-left: 25px;
-  }
-  
-  .MuiTab-wrapper {
-    font-size: 16px;
-    text-align: left;
-    align-items: flex-start !important;
-    font-family: "NTR", sans-serif;
-  }
-  
-  .MuiButtonBase-root {
-    outline: none !important;
-    color: var(--lightest-slate) !important;
-  }
-  
-  .PrivateTabIndicator-colorSecondary-5 {
-    background-color: var(--green-bright) !important;
-  }
-  .jss5 {
-    background-color: var(--green-bright) !important;
-  }
-  .makeStyles-tabs-2 {
-    border-right: 1px solid var(--lightest-navy) !important;
-  }
-  #experience .MuiTab-root {
-    padding: 6px 20px;
-  }
-  .MuiButtonBase-root:focus {
-    color: var(--green-bright) !important;
-  }
-  
-  ul {
-    list-style: none;
-    margin-left: -40px;
-  }
-  
-  .job-description li::before {
-    content: "▹    ";
-    color: var(--green-bright);
-    position: absolute;
-    left: 0;
-  }
-  
-  .job-description li {
-    position: relative;
-    padding-left: 30px;
-    padding-bottom: 16px;
-    font-size: 18px;
-    color: var(--slate);
-  }
-  
-  .job-description {
-    padding-top: 24px;
-    max-width: 650px;
-    font-family: "NTR", sans-serif;
-    font-size: 20px;
-  }
-  
-  .job-description a,
-  .job-description b {
-    font-size: 19px;
-    font-weight: bold;
+    font-size: 22px;
   }
 
-  /* Adding slider for my experience */
-  .joblist-container {
-    position: relative;
+  .joblist-job-company {
+    font-size: 22px;
   }
-  
-  .slider {
-    position: absolute;
-    right: -5px; /* Position on the right side */
-    width: 4px;
-    background-color: #ff51ae; /* Slider color */
-    transition: top 0.3s ease, height 0.3s ease;
-  }
-  
-  @media only screen and (max-width: 600px) {
-    .jss1 {
-      height: unset !important;
-      flex-direction: column !important;
-    }
-  
-    .makeStyles-root-1 {
-      height: unset !important;
-      width: unset;
-      flex-direction: column;
-    }
-  
-    .joblist-job-title {
-      font-size: 22px;
-    }
-  
-    .joblist-job-company {
-      font-size: 22px;
-    }
-  }
+}
