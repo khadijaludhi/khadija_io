@@ -193,6 +193,20 @@ html {
     font-size: 19px;
     font-weight: bold;
   }
+
+  /* adding slider for my experience */
+  .joblist-container {
+    position: relative;
+  }
+  
+  .slider {
+    position: absolute;
+    left: 0;
+    width: 4px;
+    background-color: #ff51ae; /* Slider color */
+    transition: top 0.3s ease, height 0.3s ease;
+  }
+  
   
   @media only screen and (max-width: 600px) {
     .jss1 {

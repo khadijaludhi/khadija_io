@@ -42,6 +42,7 @@ const JobList = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasBeenVisible, setHasBeenVisible] = useState(false);
   const sectionRef = useRef(null);
+  const [sliderStyle, setSliderStyle] = useState({});
 
   const experienceItems = {
     "Morgan Stanley": {
@@ -70,8 +71,14 @@ const JobList = () => {
     },
   };
 
-  const handleChange = (index) => {
+  const handleChange = (index, event) => {
     setValue(index);
+
+    const element = event.currentTarget;
+    setSliderStyle({
+      top: element.offsetTop,
+      height: element.offsetHeight,
+    });
   };
 
   useEffect(() => {
@@ -101,24 +108,35 @@ const JobList = () => {
     };
   }, []);
 
+  useEffect(() => {
+    // Set default slider position to the first item
+    const firstItem = document.querySelector('ul li');
+    if (firstItem) {
+      setSliderStyle({
+        top: firstItem.offsetTop,
+        height: firstItem.offsetHeight,
+      });
+    }
+  }, []);
+
   return (
-    <div ref={sectionRef}>
+    <div ref={sectionRef} className="joblist-container">
       <Fade bottom when={isVisible || hasBeenVisible} delay={500} distance="75px" duration={3000}>
         <div style={{ display: "flex", flexDirection: isHorizontal ? "column" : "row", gap: "20px" }}>
-          <div style={{ flexBasis: "20%" }}>
+          <div style={{ flexBasis: "20%", position: "relative" }}>
             <ul style={{ listStyle: "none", padding: 0, marginTop: 5 }}>
               {Object.keys(experienceItems).map((key, i) => (
                 <li
                   key={i}
-                  style={{ marginBottom: "8px", cursor: "pointer", color: value === i ? "#ff51ae" : "#fff" }}
-                  onClick={() => handleChange(i)}
+                  style={{ marginBottom: "8px", cursor: "pointer", color: value === i ? "#ff51ae" : "#fff", position: 'relative' }}
+                  onClick={(e) => handleChange(i, e)}
                   {...a11yProps(i)}
                 >
-                  {/* Always display the experience name */}
                   {key}
                 </li>
               ))}
             </ul>
+            <div className="slider" style={sliderStyle}></div>
           </div>
           <div style={{ flexBasis: "80%" }}>
             {Object.keys(experienceItems).map((key, i) => (
