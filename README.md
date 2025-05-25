@@ -16,7 +16,7 @@ Hi and welcome to my portfolio! This project has been a great experience, challe
 ### Vite:
 - **Fast Development Environment:**  Acquired knowledge about how Vite uses native ES modules for faster development cycles.
 - **Plugin Ecosystem:** Explored Vite's rich plugin system for easy integration of tools and libraries.
-- **Optimized Builds:** Understood Vite's approach to optimizing production builds using Rollup.
+- **Optimised Builds:** Understood Vite's approach to optimising production builds using Rollup.
 
 ### React:
 - **Component-Based Architecture:** Deepened my understanding of the modular nature of React by building reusable components.
