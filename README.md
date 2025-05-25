@@ -25,18 +25,18 @@ Hi and welcome to my portfolio! This project has been a great experience, challe
 
 ### Tailwind:
 - **Utility-First CSS:** Learned to employ Tailwind's utility-first approach for efficient UI development.
-- **Customization:** Tailored the Tailwind framework to fit specific design requirements.
-- **JIT Mode:** Experienced the benefits of using JIT mode for optimized CSS.
+- **Customisation:** Tailored the Tailwind framework to fit specific design requirements.
+- **JIT Mode:** Experienced the benefits of using JIT mode for optimised CSS.
 
 ## Web Dev Lessons
 - **Responsive Design:** Ensured the web applications look and function well across all device types.
-- **Animation Integration:** Utilized react-lottie for animations for enhanced user engagement.
+- **Animation Integration:** Utilised react-lottie for animations for enhanced user engagement.
 - **Performance Optimisation:** Adopted best practices for swift page load, offering a seamless experience.
 
 ## Advanced Features
 - **Typewriter Effect:** Incorporated the Typewriter-Effect library to bring life to text elements.
 - **Intersection Observers:** Implemented Intersection Observer API for lazy loading and scroll-triggered effects.
-- **Lazy Loading:** Integrated lazy loading to optimize page load performance.
+- **Lazy Loading:** Integrated lazy loading to optimise page load performance.
 - **Scroll Effects:** Crafted custom scroll-based animations using CSS and JavaScript.
 
 
