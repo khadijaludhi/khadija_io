@@ -82,7 +82,8 @@ const AboutMe = () => {
         <Fade bottom when={isVisible || hasBeenVisible} delay={500} distance="75px" duration={3000}>  {/* <- Changed this condition */}
           <div className="about-content">
             <div>
-                <p>I am a second year <span className="highlighted-text">Mathematics</span> student at the <span className="highlighted-text">University of Leeds</span> with a growing passion for technology.</p>
+                <p>I am a third year <span className="highlighted-text">Mathematics</span> student at the <span className="highlighted-text">University of Leeds</span> entering my final year with a growing passion for technology.</p>
+                <p>This summer, I completed an <span className="highlighted-text">internship</span> with <span className="highlighted-text">Morgan Stanley</span>, where I gained valuable experience and new perspectives to carry into my final year.</p>
                 <p>Although I have much to learn, I view each challenge as an opportunity for <span className="highlighted-text">growth and advancement</span>. I am eager to build my skill set and gain deeper insights in the years to come.</p>
                 <p>Outside of my studies, I love to play Baldur's Gate 3 and listen to true crime podcasts. I am also fascinated by space and enjoy hiking.</p>
             </div>
