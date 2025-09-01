@@ -49,9 +49,9 @@ const JobList = () => {
       jobTitle: "2025 Technology Analyst Summer Intern @ Morgan Stanley",
       duration: "APR 2024 - AUG 2025",
       desc: [
-        "Participated in Morgan Stanley’s Technology Spring Insight Week, exploring the integration of technology and finance through hands-on experiences.",
-        "Accepted a return offer for the summer of 2025.",
-        "Worked within the eFX team",
+        "Participated in Morgan Stanley’s Technology Spring Insight Week.",
+        "Accepted a return offer for the 2025 Summer Analyst Internship.",
+        "Worked within the eFX team during Summer 2025.",
 
       ],
     },
