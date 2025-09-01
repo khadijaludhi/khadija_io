@@ -199,11 +199,9 @@ ul {
   position: relative;
 }
 
-/* horizontal underline slider */
 .slider {
   position: absolute;
   bottom: 0;                /* sit at the bottom of the tabs */
-  left: 0;
   height: 2px;              /* thin underline */
   width: 0;                 /* JS will set width */
   background-color: #ff51ae;
