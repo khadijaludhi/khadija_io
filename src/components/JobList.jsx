@@ -28,7 +28,7 @@ const JobList = () => {
       desc: [
         "Participated in Morgan Stanley’s 2024 Technology Spring Insight Week.",
         "Accepted a return offer for the 2025 Summer Analyst Internship.",
-        "Worked within the eFX team during Summer 2025.",
+        "Worked within the eFX team during Summer 2025 and gained valuable insight into how global tech teams support and develop electronic trading systems.",
       ],
     },
     Autovista: {

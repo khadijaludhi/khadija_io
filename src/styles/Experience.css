@@ -23,6 +23,7 @@ html {
   text-align: left;
   font-weight: normal;
   min-height: 40vh;
+  width: 100%;
   max-width: 850px;
 }
 
@@ -197,6 +198,7 @@ ul {
 /* Adding slider for my experience */
 .joblist-container {
   position: relative;
+  width: 100%;
 }
 
 .slider {
