@@ -2,57 +2,33 @@ import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import Fade from "react-reveal/Fade";
 
-const isHorizontal = window.innerWidth < 600;
-
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
+function TabPanel({ children, value, index, ...other }) {
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`full-width-tabpanel-${index}`}
-      aria-labelledby={`full-width-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <div style={{ padding: 0 }}>
-          {children}
-        </div>
-      )}
+    <div role="tabpanel" hidden={value !== index} {...other}>
+      {value === index && <div style={{ padding: 0 }}>{children}</div>}
     </div>
   );
 }
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
-};
-
-function a11yProps(index) {
-  return {
-    id: `full-width-tab-${index}`,
-    "aria-controls": `full-width-tabpanel-${index}`,
-  };
-}
+TabPanel.propTypes = { children: PropTypes.node, index: PropTypes.any.isRequired, value: PropTypes.any.isRequired };
 
 const JobList = () => {
   const [value, setValue] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [hasBeenVisible, setHasBeenVisible] = useState(false);
   const sectionRef = useRef(null);
-  const [sliderStyle, setSliderStyle] = useState({});
+
+  // slider for the horizontal tabs (underline)
+  const tabsRef = useRef([]);
+  const [sliderStyle, setSliderStyle] = useState({ left: 0, width: 0 });
 
   const experienceItems = {
     "Morgan Stanley": {
       jobTitle: "2025 Technology Analyst Summer Intern @ Morgan Stanley",
       duration: "APR 2024 - AUG 2025",
       desc: [
-        "Participated in Morgan Stanley’s Technology Spring Insight Week.",
+        "Participated in Morgan Stanley’s 2024 Technology Spring Insight Week.",
         "Accepted a return offer for the 2025 Summer Analyst Internship.",
         "Worked within the eFX team during Summer 2025.",
-
       ],
     },
     Autovista: {
@@ -73,100 +49,103 @@ const JobList = () => {
     },
   };
 
-  const handleChange = (index, event) => {
-    setValue(index);
+  const keys = Object.keys(experienceItems);
 
-    const element = event.currentTarget;
-    setSliderStyle({
-      top: element.offsetTop,
-      height: element.offsetHeight,
-    });
+  const moveSliderTo = (idx) => {
+    const el = tabsRef.current[idx];
+    if (!el) return;
+    const { offsetLeft, offsetWidth } = el;
+    setSliderStyle({ left: offsetLeft, width: offsetWidth });
   };
 
-  const updateSliderPosition = () => {
-    const selectedItem = document.querySelector(`ul li:nth-child(${value + 1})`);
-    if (selectedItem) {
-      setSliderStyle({
-        top: selectedItem.offsetTop,
-        height: selectedItem.offsetHeight,
-      });
-    }
+  const handleChange = (idx) => {
+    setValue(idx);
+    moveSliderTo(idx);
   };
 
+  // intersection observer (your fade-in)
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const obs = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
-
-        if (entry.isIntersecting) {
-          setHasBeenVisible(true);
-        }
+        if (entry.isIntersecting) setHasBeenVisible(true);
       },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.25,
-      }
+      { threshold: 0.25 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
+    if (sectionRef.current) obs.observe(sectionRef.current);
+    return () => obs.disconnect();
   }, []);
 
+  // set / update slider position on mount & resize
   useEffect(() => {
-    // Set default slider position to the first item
-    updateSliderPosition();
-
-    window.addEventListener("resize", updateSliderPosition);
-
-    return () => {
-      window.removeEventListener("resize", updateSliderPosition);
-    };
+    const onResize = () => moveSliderTo(value);
+    moveSliderTo(value);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, [value]);
 
   return (
     <div ref={sectionRef} className="joblist-container">
       <Fade bottom when={isVisible || hasBeenVisible} delay={500} distance="75px" duration={3000}>
-        <div style={{ display: "flex", flexDirection: isHorizontal ? "column" : "row", gap: "20px" }}>
-          <div style={{ flexBasis: "20%", position: "relative" }}>
-            <ul style={{ listStyle: "none", padding: 0, marginTop: 5 }}>
-              {Object.keys(experienceItems).map((key, i) => (
-                <li
-                  key={i}
-                  style={{ marginBottom: "8px", cursor: "pointer", color: value === i ? "#ff51ae" : "#fff", position: 'relative' }}
-                  onClick={(e) => handleChange(i, e)}
-                  {...a11yProps(i)}
-                >
-                  {key}
+        {/* TOP HORIZONTAL TABS */}
+        <div style={{ position: "relative", borderBottom: "1px solid rgba(230,217,255,0.2)", marginBottom: 24, overflowX: "auto" }}>
+          <ul
+            style={{
+              display: "flex",
+              gap: 24,
+              listStyle: "none",
+              padding: 0,
+              margin: 0,
+              whiteSpace: "nowrap",
+            }}
+          >
+            {keys.map((k, i) => (
+              <li
+                key={k}
+                ref={(el) => (tabsRef.current[i] = el)}
+                onClick={() => handleChange(i)}
+                style={{
+                  cursor: "pointer",
+                  padding: "10px 2px",
+                  color: value === i ? "#ff51ae" : "#fff",
+                  fontWeight: value === i ? 700 : 400,
+                  transition: "color .2s",
+                }}
+              >
+                {k}
+              </li>
+            ))}
+          </ul>
+          {/* underline slider */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: 0,
+              height: 2,
+              background: "#ff51ae",
+              transition: "left .25s ease, width .25s ease",
+              ...sliderStyle,
+            }}
+          />
+        </div>
+
+        {/* CONTENT */}
+        {keys.map((key, i) => (
+          <TabPanel value={value} index={i} key={key}>
+            <div style={{ marginBottom: 8 }}>
+              <span style={{ fontSize: 24, fontWeight: "bold" }}>{experienceItems[key].jobTitle}</span>
+            </div>
+            <div style={{ marginBottom: 8, color: "#ff51ae" }}>{key}</div>
+            <div style={{ marginBottom: 16, color: "rgb(230, 217, 255)" }}>{experienceItems[key].duration}</div>
+            <ul style={{ listStyle: "disc", paddingLeft: 20 }}>
+              {experienceItems[key].desc.map((d, j) => (
+                <li key={j} style={{ marginBottom: 8, color: "#eee" }}>
+                  {d}
                 </li>
               ))}
             </ul>
-            <div className="slider" style={sliderStyle}></div>
-          </div>
-          <div style={{ flexBasis: "80%" }}>
-            {Object.keys(experienceItems).map((key, i) => (
-              <TabPanel value={value} index={i} key={i}>
-                <div style={{ marginBottom: "8px" }}>
-                  <span style={{ fontSize: "24px", fontWeight: "bold" }}>{experienceItems[key]["jobTitle"]}</span>
-                </div>
-                <div style={{ marginBottom: "8px", color: "#ff51ae" }}>{key}</div>
-                <div style={{ marginBottom: "16px", color: "rgb(230, 217, 255)" }}>{experienceItems[key]["duration"]}</div>
-                <ul style={{ listStyle: "disc", paddingLeft: "20px" }}>
-                  {experienceItems[key]["desc"].map((descItem, j) => (
-                    <li key={j} style={{ marginBottom: "8px", color: "#eee" }}>{descItem}</li>
-                  ))}
-                </ul>
-              </TabPanel>
-            ))}
-          </div>
-        </div>
+          </TabPanel>
+        ))}
       </Fade>
     </div>
   );
