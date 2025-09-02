@@ -85,6 +85,22 @@ html {
   .section-right {
       font-size: 0px;
   }
+
+  .jss1 {
+    height: unset !important;
+    flex-direction: column !important;
+  }
+
+  .makeStyles-root-1 {
+    height: unset !important;
+    width: unset;
+    flex-direction: column;
+  }
+
+  .experience-tab-list li {
+    font-size: 16px;
+  }
+
 }
 
 @font-face {
@@ -208,25 +224,4 @@ ul {
   width: 0;                 /* JS will set width */
   background-color: #ff51ae;
   transition: left 0.25s ease, width 0.25s ease;
-}
-
-@media only screen and (max-width: 600px) {
-  .jss1 {
-    height: unset !important;
-    flex-direction: column !important;
-  }
-
-  .makeStyles-root-1 {
-    height: unset !important;
-    width: unset;
-    flex-direction: column;
-  }
-
-  .joblist-job-title {
-    font-size: 22px;
-  }
-
-  .joblist-job-company {
-    font-size: 22px;
-  }
 }

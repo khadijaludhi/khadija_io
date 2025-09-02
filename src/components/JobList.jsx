@@ -90,6 +90,7 @@ const JobList = () => {
         {/* TOP HORIZONTAL TABS */}
         <div style={{ position: "relative", borderBottom: "1px solid rgba(230,217,255,0.2)", marginBottom: 24, overflowX: "auto" }}>
           <ul
+            className="experience-tab-list"
             style={{
               display: "flex",
               gap: 24,
